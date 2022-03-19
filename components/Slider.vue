@@ -1,16 +1,17 @@
 <template>
     <div class="slider">
       <button @click="prev" class="btn btn-left" :style="{display:`${lshow}`}">
-            <span>Geographie</span>
-      </button>
-        <div class="container-slides" :style="{transform: `translateX(${index}px)`, transition:`${transition}`}">
-            <img src="https://picsum.photos/500/501" alt="img-histoire" class="img-slider">
-            <img src="https://picsum.photos/500/500" alt="img-quizz" class="img-slider" :style="{display:`${hide}`}" >
-            <img src="https://picsum.photos/500/502" alt="img-geographie" class="img-slider">
-        </div>
-        <button @click="next" class="btn btn-right" :style="{display:`${rshow}`}">
             <span>Histoire</span>
       </button>
+        <div class="container-slides" :style="{transform: `translateX(${index}px)`, transition:`${transition}`}">
+            <img src="~assets/img/dessinHistoire.png" alt="img-histoire" class="img-slider">
+            <img src="https://picsum.photos/500/300" alt="img-quizz" class="img-slider" :style="{display:`${hide}`}" >
+            <img src="~assets/img/geo1.webp" alt="img-geographie" class="img-slider">
+        </div>
+        <button @click="next" class="btn btn-right" :style="{display:`${rshow}`}">
+            <span>Geographie</span>
+      </button>
+      <NuxtLink :to="matiere"><button class="btn btn-cta" :style="{display:`${ctaShow}`}"> GO FOR IT</button></NuxtLink>
     </div>
 </template>
 
@@ -23,7 +24,9 @@ export default {
             transition:"transform 0.2s ease",
             hide:"block",
             rshow:"flex",
-            lshow:"flex"
+            lshow:"flex",
+            ctaShow:"none",
+            matiere:""
         }
     },
     methods: {
@@ -33,12 +36,16 @@ export default {
             this.rshow = "none"
             this.lshow = "flex"
             this.index = -500
+            this.ctaShow = "block"
+            this.matiere = "/geographie"
         },
         prev(){
             this.hide = "none"
             this.rshow = "flex"
             this.lshow = "none"
             this.index = 0
+            this.ctaShow = "block"
+            this.matiere = "/histoire"
         }
         
     }
@@ -86,5 +93,10 @@ export default {
         top: 50%;
         transform: translateY(-50%);
         right: 5px;
+    }
+    .btn-cta{
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 5px;
     }
 </style>
