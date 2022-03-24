@@ -87,11 +87,13 @@ export default {
     .btn-left{
         top: 50%;
         transform: translateY(-50%);
+        background-color: rgb(12, 90, 235);
         left: 5px;
     }
     .btn-right{
         top: 50%;
         transform: translateY(-50%);
+        background-color: #16a923;
         right: 5px;
     }
     .btn-cta{
