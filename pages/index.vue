@@ -13,7 +13,6 @@
   import Slider from '../components/Slider.vue'
   export default {
     name: 'IndexApp',
-  
     components: {
       Slider
     },
@@ -29,10 +28,12 @@
     margin-top: 100px;
     gap: 50px;
   }
-  .score{
+
+  .score {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
   }
+
 </style>

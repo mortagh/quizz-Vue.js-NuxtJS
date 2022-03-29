@@ -23,10 +23,10 @@ export default {
              description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi iste adepudiandae iusto suscipit eum tempora asperiores hic minus soluta doloremque quidem dolorem est praesentium,doloribus a totam nesciunt."},
             {titre: "Inventions",
              description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi iste ad repudiandae iusto suscipit eum tempora asperiores hic minus soluta doloremque quidem dolorem est praesentium,       doloribus a totam nesciunt."},
-          ]}
-        
+          ]
       }
-    }
+  }
+}
 
 </script>
 
