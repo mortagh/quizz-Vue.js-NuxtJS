@@ -1,30 +1,34 @@
 <template>
   <div class="p-hist">
-    <h1> HISTOIRE </h1>
+    <h1> Histoire</h1>
     <h3>Choisis ta thématique</h3>
     <div class="container-thematique">
-      <tile-thematique>
-        <h2 class="thematiques">Bataille</h2>
-        <p class="desc-thematiques">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi iste ad
-          repudiandae iusto suscipit eum tempora asperiores hic minus soluta doloremque quidem dolorem est praesentium,
-          doloribus a totam nesciunt.
-        </p>
-      </tile-thematique>
-      <tile-thematique>
-        <h2 class="thematiques">Politique</h2>
-        <p class="desc-thematiques">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam labore sed illo,
-          facilis a id, ipsum aut, reiciendis consequuntur velit quisquam eos distinctio aperiam! Debitis expedita enim
-          explicabo molestias illum.</p>
-      </tile-thematique>
-      <tile-thematique>
-        <h2 class="thematiques">Inventions</h2>
-        <p class="desc-thematiques">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis autem error hic
-          delectus. Blanditiis neque optio aliquid eius, fugiat debitis sit obcaecati excepturi adipisci? Nobis tempora
-          exercitationem debitis repellendus! Minima?</p>
+      <tile-thematique v-for="thematique in thematiques" :key="thematique.titre">
+        <h2>{{ thematique.titre }}</h2>
+        <p>{{ thematique.description }}</p>
       </tile-thematique>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'histoire',
+  data() {
+      return{ 
+          thematiques:[
+            {titre: "Bataille",
+            description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi iste ad  repudiandae iusto suscipit eum tempora asperiores hic minus soluta doloremque quidem dolorem est praesentium,doloribus a totam nesciunt."},
+            {titre: "Politique",
+             description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi iste adepudiandae iusto suscipit eum tempora asperiores hic minus soluta doloremque quidem dolorem est praesentium,doloribus a totam nesciunt."},
+            {titre: "Inventions",
+             description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi iste ad repudiandae iusto suscipit eum tempora asperiores hic minus soluta doloremque quidem dolorem est praesentium,       doloribus a totam nesciunt."},
+          ]}
+        
+      }
+    }
+
+</script>
 
 <style scoped>
   .p-hist {
@@ -40,6 +44,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
   }
 
 </style>

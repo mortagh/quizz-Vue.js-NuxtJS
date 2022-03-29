@@ -12,10 +12,11 @@
 <script>
   import Slider from '../components/Slider.vue'
   export default {
+    name: 'IndexApp',
+  
     components: {
       Slider
     },
-    name: 'IndexPage'
   }
 
 </script>

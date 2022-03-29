@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="container">
     <h1>La question</h1>
     <div class="QCM">
@@ -38,6 +39,10 @@
         </div>
       </div>
     </div>
+    <button class="valider">valider</button>
+    
+  </div>
+  <quizz></quizz>
   </div>
 </template>
 
@@ -52,12 +57,16 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 32px;
+    padding: 32px 32px 64px 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
   }
 
   .checkbox {
-      display: flex;
-      gap: 8px;
+    display: flex;
+    gap: 8px;
   }
 
   label {
@@ -75,6 +84,27 @@
 
   input {
     margin-top: 4px;
+  }
+
+  .valider {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 16px;
+    outline: none;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 1;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #329EF4;
+    font-weight: 400;
+    color: white;
   }
 
   .reponse {
