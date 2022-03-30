@@ -44,7 +44,7 @@ export default {
             {props:'<script>',correct:true},
             {props:'<js>'},
             {props:'<scripting>',},
-            {props:'<javascript>',}
+            {props:'<javascript><javascript><javascript><javascript><javascript><javascript><javascript><javascript><javascript><javascript><javascript>',}
           ]
         },
         {
@@ -169,23 +169,22 @@ export default {
 
 .container-app {
     display: flex;
-    width: 100%;
-    height: 100%;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
 }
 
 .container-quiz {
     display: flex;
-    width: 40%;
-    height: 85%;
+    width: 800px;
     background-color: white;
     text-align: center;
     flex-flow: column;
-    border: 5px solid blue;
+    border: 5px solid #0c5aeb;
     border-radius: 10px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
     margin: auto;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
@@ -203,14 +202,13 @@ export default {
 
 .container-quiz .box {
     display: flex;
-    width: 100%;
-    height: 70%;
     flex-flow: column;
     margin: auto;
 }
 
 .box-question {
     margin-top: 20px;
+    color: black;
 }
 
 .box-question p {
@@ -226,10 +224,11 @@ export default {
 
 ul {
     display: flex;
-    width: 80%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
     margin: 0;
     padding: 0;
-    flex-flow: column;
 }
 
 li {
@@ -240,6 +239,8 @@ li {
     border-radius: 15px;
     cursor: pointer;
     transition: 0.3s;
+    color: black;
+    width: 45%;
 }
 
 li:hover {
@@ -286,8 +287,7 @@ li>div {
     font-size: 18px;
     cursor: pointer;
     border-radius: 15px;
-    margin: auto;
-    margin-bottom: 10px;
+    margin: 10px auto;
     letter-spacing: 2px;
     background-color: #a09f9ff5;
 }
