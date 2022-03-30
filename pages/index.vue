@@ -34,11 +34,13 @@ import MonSlider from '../components/MonSlider.vue'
       images: [
         {
           src: "dessinHistoire.png",
-          alt: "Image histoire"
+          alt: "Image histoire",
+          title: "Histoire"
         },
         {
           src: "geo1.webp",
-          alt: "Image géographie"
+          alt: "Image géographie",
+          title: "Geographie"
         }
       ]
     }

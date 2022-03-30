@@ -2,6 +2,7 @@
   <div class="slider">
     <img :src="require('~/assets/img/'+images[active].src)" :alt="images[active].alt">
     <div class="controls">
+      <h2>{{images[active].title}}</h2>
       <span class="previous" @click="previous()">précédent</span>
       <span class="next" @click="next()">suivant</span>
     </div>
