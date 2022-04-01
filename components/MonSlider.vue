@@ -68,6 +68,14 @@ export default {
     left: 0;
     padding: 1.5rem;
   }
+  .controls h2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: blue;
+    font-size: 2.5rem;
+  }
   .next, .previous{
     cursor: pointer;
     background-color: blue;

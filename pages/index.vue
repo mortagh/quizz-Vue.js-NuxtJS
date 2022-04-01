@@ -2,7 +2,7 @@
   <div class="quizz">
     <h1>QUIZZ</h1>
     <div class="score">
-      <h2>Score</h2>
+      <h3>Score</h3>
       <p>t'es vraiment une merde</p>
     </div>
     <div class="container-slider">
@@ -20,6 +20,11 @@
 import MonSlider from '../components/MonSlider.vue'
   export default {
     name: 'IndexApp',
+    async asyncData({ $axios }) {
+            const ip = await $axios.$get('http://localhost:3001/categories')
+            console.log(ip)
+            return { ip }
+        },
     components: {
         MonSlider
     },
@@ -30,6 +35,7 @@ import MonSlider from '../components/MonSlider.vue'
     },
     data() {
     return {
+      categories: [],
       none: "",
       images: [
         {
@@ -54,7 +60,7 @@ import MonSlider from '../components/MonSlider.vue'
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 20px;
     gap: 50px;
   }
 
@@ -86,4 +92,9 @@ import MonSlider from '../components/MonSlider.vue'
     color: blue;
   }
 
+  .score{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
 </style>

@@ -30,6 +30,15 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
+
+  
+  // publicRuntimeConfig: {
+  //   axios: {
+  //     baseURL: 'http://localhost:3001'
+  //   }
+  // },
+
+
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
@@ -38,7 +47,13 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    ['@nuxtjs/axios'],
   ],
+
+  axios: {
+    // proxy: true
+  },
+  
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
