@@ -6,7 +6,7 @@
       <p>t'es vraiment une merde</p>
     </div>
     <div class="container-slider">
-      <MonSlider :images="images"/>
+      <MonSlider :images="categories"/>
       <div class="explain" :style="{display:`${none}`}">
         <h2>Choisie ta thematique!</h2>
         <p> Lance le mode rapide en haut à droite de ton écran pour faire plus de point! <br> Une bonne réponse en moin de 5 secondes c'est 2 points et en moin de 10sec 1,5 points <br> GOOD LUCK </p>
@@ -20,11 +20,11 @@
 import MonSlider from '../components/MonSlider.vue'
   export default {
     name: 'IndexApp',
-    async asyncData({ $axios }) {
-            const ip = await $axios.$get('http://localhost:3001/categories')
-            console.log(ip)
-            return { ip }
-        },
+    async fetch() {
+            this.categories = await fetch(
+                'http://localhost:3001/categories'
+            ).then(res => res.json())
+    },
     components: {
         MonSlider
     },
@@ -97,4 +97,5 @@ import MonSlider from '../components/MonSlider.vue'
     top: 20px;
     right: 20px;
   }
+  
 </style>

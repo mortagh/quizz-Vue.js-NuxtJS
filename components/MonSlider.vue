@@ -1,11 +1,14 @@
 <template>
   <div class="slider">
-    <img :src="require('~/assets/img/'+images[active].src)" :alt="images[active].alt">
+    <img :src="require('~/assets/img/'+images[active].img)" :alt="images[active].matiere">
     <div class="controls">
-      <h2>{{images[active].title}}</h2>
+      <h2>{{images[active].matiere}}</h2>
       <span class="previous" @click="previous()">précédent</span>
       <span class="next" @click="next()">suivant</span>
     </div>
+      <NuxtLink :to="'/matieres/' + images[active].id">
+      <span class="go">GO</span>
+      </NuxtLink>
   </div>
 </template>
 
@@ -36,9 +39,6 @@ export default {
     },
   
   },
-  // mounted() {
-  //   setInterval(this.next, 10000);
-  // }
 }
 </script>
 
@@ -49,6 +49,9 @@ export default {
   .slider {
     position: relative;
     width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .slider img {
     width: 100%;
@@ -81,5 +84,9 @@ export default {
     background-color: blue;
     padding: 8px 24px;
     border-radius: 5px;
+  }
+  .go{
+    pointer-events: all;
+    cursor: pointer;
   }
 </style>
