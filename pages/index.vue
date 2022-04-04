@@ -19,11 +19,21 @@
 <script>
 import MonSlider from '../components/MonSlider.vue'
   export default {
+    data(){
+      return{
+        categories:[]
+      }
+    },
     name: 'IndexApp',
-    async fetch() {
-            this.categories = await fetch(
-                'http://localhost:3001/categories'
-            ).then(res => res.json())
+    async asyncData() {
+      let categories = await fetch('http://localhost:3001/categories')
+      .then(res => {
+        return res.json()
+      })
+      console.log(categories)
+      return{
+        categories
+      }
     },
     components: {
         MonSlider

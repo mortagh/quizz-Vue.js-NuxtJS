@@ -87,6 +87,7 @@ export default {
   }
   .go{
     pointer-events: all;
+    position: relative;
     cursor: pointer;
   }
 </style>

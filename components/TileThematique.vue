@@ -1,8 +1,18 @@
 <template>
-     <NuxtLink to="/quizz"><div class="tile">
-        <slot></slot>
-    </div></NuxtLink>
+    <NuxtLink :to="'/quizzs/' + thematique.id">
+        <div class="tile">
+            <slot></slot>
+        </div>
+    </NuxtLink>
 </template>
+
+<script>
+export default {
+  props: {
+    thematique: Object,
+  },
+}
+</script>
 
 <style scoped>
     .tile{
@@ -19,7 +29,13 @@
         align-items: center;
         justify-content: center;
         gap: 16px;
+        transition: transform .5s;
     }
+
+    .tile:hover{
+        transform: scale(1.05);
+    }
+
     a{
         text-decoration: none;
         color: white;

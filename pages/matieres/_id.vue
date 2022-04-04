@@ -3,12 +3,9 @@
     <h1> {{ categories[i].matiere }}</h1>
     <h3>Choisis ta thématique</h3>
     <div class="container-thematique">
-      <tile-thematique v-for="thematique in thematiques" :key="thematique.title">
+      <tile-thematique :thematique="thematique" v-for="thematique in thematiques" :key="thematique.title">
         <h2>{{ thematique.title }}</h2>
         <p>{{ thematique.description }}</p>
-        <NuxtLink :to="'/quizzs/' + thematique.id">
-          <span class="go">GO</span>
-        </NuxtLink>
       </tile-thematique>
     </div>
   </div>
