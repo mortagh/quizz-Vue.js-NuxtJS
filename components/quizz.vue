@@ -1,7 +1,7 @@
 <template>
   <div class="container-app">
         <div class="container-quiz">
-          <div class="header-quiz">
+          <div class="header-quiz"  :class="'matiere' + color ">
             <h1>Quizz</h1>
           </div>
           <div class="step-progress" :style="{'width':progress + '%'}"></div>
@@ -19,11 +19,11 @@
           <div class="box-score" v-if="score_show">
               <h2>Your score is</h2>
               <h2>{{score}}/{{questions.length}}</h2>
-              <div class="btn-restart">
+              <div class="btn-restart" >
                   <button @click="restartQuiz">Restart <i class="fas fa-sync-alt"></i></button>
               </div>
           </div>
-          <div class="footer-quiz">
+          <div class="footer-quiz" :class="'matiere' + color ">
                 <div v-if="progress < 100" class="box-button">
                     <button  @click="skipQuestion()" :style="next ? 'background-color: rgb(106, 128, 202)' : ''">Skip</button>
                     <button  @click="nextQuestion()" :style="!next ? 'background-color: rgb(106, 128, 202)' : ''">Next</button>
@@ -39,6 +39,7 @@ export default {
     thematiques: Array,
     questions: Array,
     reponses: Array,
+    color: "",
   },
   data(){
     return{
@@ -116,9 +117,6 @@ export default {
     justify-content: center;
     align-items: center;
     width: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
 }
 
 .container-quiz {
@@ -127,7 +125,6 @@ export default {
     background-color: white;
     text-align: center;
     flex-flow: column;
-    border: 5px solid #0c5aeb;
     border-radius: 10px;
     margin: auto;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -255,6 +252,7 @@ li.incorrect {
     width: 100%;
     height: 70%;
     flex-flow: column;
+    color: black;
 }
 
 .box-score h2 {
@@ -300,7 +298,12 @@ i {
 .next {
     background-color: rgb(106, 128, 202);
 }
-
+.matiere1{
+  background-color: green;
+}
+.matiere2{
+  background:#0c5aeb ;
+}
 @media screen and (max-width: 900px) {
     .container-quiz {
         width: 60%;

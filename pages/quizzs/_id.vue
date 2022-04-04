@@ -1,13 +1,7 @@
 <template>
-<div>
-  <h1> {{ thematiques[i].title }}</h1>
-  <div class="question" v-for="(question,index) in questions" :key="index">
-    <p>{{ question.question }}</p>
-      <div class="reponses" v-for="(reponse,index) in reponses" :key="index" v-show="reponse.id_question == question.id">
-        <p>{{reponse.reponse}}</p>
-  </div>
-  </div>
-  <Quizz :questions="questions" :reponses="reponses"/>
+<div class="container">
+  <h2> {{ thematiques[i].title }}</h2>
+  <Quizz :questions="questions" :reponses="reponses" :color="thematiques[i].id_categorie"/>
 </div>
 </template>
 <script>
@@ -23,6 +17,7 @@ export default {
     .then(res => {
       return res.json()
     })
+    console.log(thematiques.id_categorie)
     // Récupération de l'api questions
     let table = await fetch('http://localhost:3001/questions')
     .then(res => {
@@ -43,8 +38,16 @@ export default {
   }
 }
 </script>
-
 <style scoped>
- 
-
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .h2{
+    font-size: 2rem;
+    font-weight: 700
+  }
 </style>

@@ -1,13 +1,14 @@
 <template>
   <div class="slider">
+    <h2 :class="'matiere' + images[active].id">{{images[active].matiere}}</h2>
     <img :src="require('~/assets/img/'+images[active].img)" :alt="images[active].matiere">
     <div class="controls">
-      <h2>{{images[active].matiere}}</h2>
+      
       <span class="previous" @click="previous()">précédent</span>
       <span class="next" @click="next()">suivant</span>
     </div>
-      <NuxtLink :to="'/matieres/' + images[active].id">
-      <span class="go">GO</span>
+      <NuxtLink class="go" :to="'/matieres/' + images[active].id">
+      <p class="go" :class="'matiere' + images[active].id">Let's Go (Oui il faut cliquer ici)<p/>
       </NuxtLink>
   </div>
 </template>
@@ -46,6 +47,10 @@ export default {
   *, *::before, *::after {
     box-sizing: border-box;
   }
+  a{
+    color: white;
+    text-decoration: none;
+  }
   .slider {
     position: relative;
     width: 500px;
@@ -71,17 +76,16 @@ export default {
     left: 0;
     padding: 1.5rem;
   }
-  .controls h2 {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    color: blue;
-    font-size: 2.5rem;
+  h2{
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
   .next, .previous{
     cursor: pointer;
-    background-color: blue;
+    background-color: #6a80ca;
     padding: 8px 24px;
     border-radius: 5px;
   }
@@ -89,5 +93,17 @@ export default {
     pointer-events: all;
     position: relative;
     cursor: pointer;
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-weight: 700;
+  }
+  .matiere1{
+    background-color: green;
+  }
+  .matiere2{
+    background-color: #0c5aeb;
   }
 </style>

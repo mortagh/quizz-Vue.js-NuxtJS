@@ -1,6 +1,6 @@
 <template>
     <NuxtLink :to="'/quizzs/' + thematique.id">
-        <div class="tile">
+        <div class="tile" :class="'matiere' + thematique.id_categorie">
             <slot></slot>
         </div>
     </NuxtLink>
@@ -16,7 +16,6 @@ export default {
 
 <style scoped>
     .tile{
-        background-color: rgb(12, 90, 235);
         border-radius: 10px;
         padding: 32px;
         max-width: 400px;
@@ -40,5 +39,10 @@ export default {
         text-decoration: none;
         color: white;
     }
-    
+    .matiere1{
+    background-color: green;
+    }
+    .matiere2{
+        background-color: #0c5aeb;
+    }
 </style>

@@ -105,12 +105,12 @@ export default {
         {
           icon: 'mdi-earth',
           title: 'geographie',
-          to: '/geographie'
+          to: '/matieres/1'
         },
         {
           icon: 'mdi-fencing',
           title: 'histoire',
-          to: '/histoire'
+          to: '/matieres/2'
         }
       ],
       miniVariant: false,
