@@ -99,11 +99,14 @@ export default {
         this.a++;
         this.b++;
       }
+      setTimeout(function(){console.log("test")},1000) // THIBAUD HELP
     },
     restartQuiz(){
-      Object.assign(this.$data, this.$options.data()); // reset data in vue
+      Object.assign(this.$data, this.$options.data()); 
     },
-  }
+    
+  },
+
 }
 </script>
 <style scoped>
@@ -186,7 +189,6 @@ li {
 }
 
 li:hover {
-    /* transform: scale(1.1); */
     background-color: #e7eae0;
 }
 
