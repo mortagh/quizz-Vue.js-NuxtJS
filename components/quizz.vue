@@ -12,7 +12,7 @@
               </div>
               <div class="box-propositions">
                 <ul>
-                  <li v-for="(reponse,index) in reponses" v-show="reponse.id_question == question.id" :key="index" class="li" @click="selectResponse(reponse,index)" :class=" correct ? check(reponse) : ''">{{reponse.reponse}} <div class="fas fa-check" v-if="correct ?  reponse.correct: ''"></div><div class="fas fa-times" v-if="correct ?  !reponse.correct: ''"></div></li>
+                  <li v-for="(reponse,index) in reponses" v-show="reponse.id_question == question.id" :key="index" class="li" @click.once="selectResponse(reponse,index)" :class=" correct ? check(reponse) : ''">{{reponse.reponse}} <div class="fas fa-check" v-if="correct ?  reponse.correct: ''"></div><div class="fas fa-times" v-if="correct ?  !reponse.correct: ''"></div></li>
                 </ul>
               </div>
           </div>
@@ -60,6 +60,7 @@ export default {
       this.next = false;
       if (e.correct) {
         this.score++;
+        this.$store.commit('increment')
       }
     },
     check(status){

@@ -6,7 +6,9 @@ export default ({
 
   },
   mutations: {
-   
+    increment(state){
+      state.score++
+    },
   },
   actions: {
   },
