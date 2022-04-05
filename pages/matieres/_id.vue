@@ -35,11 +35,10 @@ export default {
     })
     const thematiques = table.filter(table => table.id_categorie == params.id)
     i = params.id - 1
-    console.log(params.id)
+    // console.log(speedy)
       return{
       thematiques, categories,i
     }
-    
   }
 }
 </script>

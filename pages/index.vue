@@ -5,7 +5,7 @@
       <h3>Score</h3>
       <p>{{ score }}</p>
       <label class="switch">
-        <input type="checkbox">
+        <input type="checkbox" v-model="speedy"> <!-- speedy -->
         <span class="slider-btn round"></span>
       </label>
     </div>
@@ -27,11 +27,10 @@ import MonSlider from '../components/MonSlider.vue'
   export default {
     name: 'IndexApp',
     
-    
     data(){
       return{
         categories:[],
-        switchBtn: true,
+        speedy: true, // speedy
         none: ""
       }
     },
@@ -55,8 +54,11 @@ import MonSlider from '../components/MonSlider.vue'
     },
     
     computed: {
-        score() {
-          return this.$store.state.score
+      score() {
+        return this.$store.state.score
+      },
+      score() {
+        return this.$store.state.speedy
       },
     }
   }
