@@ -111,7 +111,6 @@ export default {
 </script>
 <style scoped>
 * {
-    font-family: 'Poppins', sans-serif;
     margin: 0;
     letter-spacing: 2px;
 }
