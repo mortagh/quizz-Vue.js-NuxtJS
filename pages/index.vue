@@ -5,7 +5,7 @@
       <h3>Score</h3>
       <p>{{ score }}</p>
       <label class="switch">
-        <input type="checkbox" v-model="speedy"> <!-- speedy -->
+        <input type="checkbox"> <!-- speedy -->
         <span class="slider-btn round"></span>
       </label>
     </div>
@@ -56,9 +56,9 @@ import MonSlider from '../components/MonSlider.vue'
       score() {
         return this.$store.state.score
       },
-      score() {
-        return this.$store.state.speedy
-      },
+      // score() {
+      //   return this.$store.state.speedy
+      // },
     }
   }
 

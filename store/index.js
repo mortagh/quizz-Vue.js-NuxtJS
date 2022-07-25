@@ -1,7 +1,7 @@
 export default ({
   state: {
     score: 0,
-    speedy: false
+    // speedy: false
   },
   getters: {
 
