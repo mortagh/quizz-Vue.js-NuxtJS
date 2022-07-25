@@ -12,9 +12,9 @@
     <div class="container-slider">
       <MonSlider :images="categories"/>
       <div class="explain" :style="{display:`${none}`}">
-        <h2>Choisie ta thematique!</h2>
-        <p> Lance le mode rapide en haut à droite de ton écran pour faire plus de point!</p>
-        <p> Une bonne réponse en moin de 5 secondes c'est 2 points et en moin de 10sec 1,5 points</p>
+        <h2>Choisie ta catégories</h2>
+        <p> Lance le mode rapide en haut à droite de ton écran pour faire plus de points!</p>
+        <p> Une bonne réponse en moins de 5 secondes c'est 2 points et en moins de 10sec 1,5 points</p>
         <p>GOOD LUCK </p>
         <button @click="hideExplain()">Let's Go</button>
       </div>
@@ -29,6 +29,7 @@ import MonSlider from '../components/MonSlider.vue'
     
     data(){
       return{
+        score:0,
         categories:[],
         speedy: true, // speedy
         none: ""

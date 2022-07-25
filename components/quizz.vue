@@ -101,17 +101,20 @@ export default {
       }
       setTimeout(function(){console.log("test")},1000) // THIBAUD HELP
     },
+
     restartQuiz(){
       Object.assign(this.$data, this.$options.data()); 
     },
     
   },
+  mounted(){
+    setTimeout(skipQuestion,10000)
+  }
 
 }
 </script>
 <style scoped>
 * {
-    font-family: 'Poppins', sans-serif;
     margin: 0;
     letter-spacing: 2px;
 }
@@ -271,7 +274,7 @@ i {
     display: flex;
     width: 100%;
     height: 5px;
-    background-color: rgb(106, 128, 202);
+    background-color: #6a80ca;
     transition: 0.5s;
 }
 
