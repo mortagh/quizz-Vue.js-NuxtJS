@@ -1,4 +1,19 @@
 # quizz
+```bash
+# BDD
+start BDD with 'docker-compose up'
+
+# Front
+npm i
+start front with 'npm run dev'
+
+
+# Back
+cd api_quizz
+npm i
+start back with 'npm run start'
+```
+
 
 ## Build Setup
 
