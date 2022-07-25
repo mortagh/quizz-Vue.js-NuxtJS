@@ -17,7 +17,6 @@ export default {
     .then(res => {
       return res.json()
     })
-    console.log(thematiques.id_categorie)
     // Récupération de l'api questions
     let table = await fetch('http://localhost:3001/questions')
     .then(res => {

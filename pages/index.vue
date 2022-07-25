@@ -29,9 +29,7 @@ import MonSlider from '../components/MonSlider.vue'
     
     data(){
       return{
-        score:0,
         categories:[],
-        speedy: true, // speedy
         none: ""
       }
     },

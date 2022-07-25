@@ -21,7 +21,7 @@ export default {
         max-width: 400px;
         min-width: 300px;
         min-height: 300px;
-        margin: 20px;
+        margin: 0 auto;
         cursor: pointer;
         display: flex;
         flex-direction: column;
@@ -29,6 +29,7 @@ export default {
         justify-content: center;
         gap: 16px;
         transition: transform .5s;
+        
     }
 
     .tile:hover{
@@ -38,6 +39,7 @@ export default {
     a{
         text-decoration: none;
         color: white;
+        flex: 1 1 0;
     }
     .matiere1{
     background-color: green;

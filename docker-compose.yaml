@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+      MYSQL_DATABASE: 'express_quizz'
+    ports: 
+      - '3306:3306'
+    volumes: 
+      - ./express_quizz.sql:/docker-entrypoint-initdb.d/quizz.sql
